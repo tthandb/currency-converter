@@ -1,1 +1,1 @@
-![Demo App](assets/demo.png | width=100)
+![Demo App](assets/demo.png){:height="356px" width="200px"}
