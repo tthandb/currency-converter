@@ -1,1 +1,1 @@
-![Demo App](assets/demo.png)
+![Demo App](assets/demo.png | width=100)
