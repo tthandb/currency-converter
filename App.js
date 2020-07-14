@@ -38,7 +38,9 @@ export default function App() {
     setFromCurrency(from);
   };
   const convertCurrency = () => {
-    fromCurrency === "vnd"? setConvertedValue(currentCurrencyValue / 23000):setConvertedValue(currentCurrencyValue*23000);
+    fromCurrency === "vnd"
+      ? setConvertedValue(currentCurrencyValue / 23000)
+      : setConvertedValue(currentCurrencyValue * 23000);
   };
   useEffect(() => {
     convertCurrency();
