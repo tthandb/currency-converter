@@ -48,14 +48,19 @@ export default function App() {
   const [convertedCurrencyValue, setConvertedValue] = useState(0);
   const [fromCurrency, setFromCurrency] = useState("vnd");
   const [toCurrency, setToCurrency] = useState("usd");
+  const [sampleNumber, setSampleNumber] = useState("100,000,000 VND");
   const setConversionCurrencies = (from, to) => {
     setToCurrency(to);
     setFromCurrency(from);
   };
   const convertCurrency = () => {
-    fromCurrency === "vnd"
-      ? setConvertedValue(currentCurrencyValue / 23000)
-      : setConvertedValue(currentCurrencyValue * 23000);
+    if (fromCurrency === "vnd") {
+      setConvertedValue(currentCurrencyValue / 23000);
+      setSampleNumber("100,000,000 VND");
+    } else {
+      setConvertedValue(currentCurrencyValue * 23000);
+      setSampleNumber("1,000 USD");
+    }
   };
   useEffect(() => {
     convertCurrency();
@@ -65,7 +70,7 @@ export default function App() {
       <Text>Please enter the value of the currency you want to convert</Text>
       <TextInput
         autoFocus
-        placeholder="100,000,000 VND"
+        placeholder={sampleNumber}
         selectionColor="red"
         textAlign="center"
         keyboardType="number-pad"
