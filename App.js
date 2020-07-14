@@ -67,7 +67,7 @@ export default function App() {
   });
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Please enter the value of the currency you want to convert</Text>
+      <Text>Please enter the value of the currency you want to convert:</Text>
       <TextInput
         autoFocus
         placeholder={sampleNumber}
