@@ -28,6 +28,21 @@ const ConversionTypeButton = (props) => {
   );
 };
 
+const FormattedCurrency = (props) => {
+  const format = props.type === "usd" ? "us" : "vn";
+  const currency = props.type === "usd" ? "USD" : "VND";
+  const flag = props.type === "usd" ? "🇺🇸" : "🇻🇳";
+  const formatter = new Intl.NumberFormat(format, {
+    currency,
+    style: "currency",
+  });
+  return (
+    <Text style={styles.currencyText}>
+      {formatter.format(props.value)} {flag}
+    </Text>
+  );
+};
+
 export default function App() {
   const [currentCurrencyValue, setFromCurrencyValue] = useState(0);
   const [convertedCurrencyValue, setConvertedValue] = useState(0);
@@ -72,9 +87,9 @@ export default function App() {
         setConversionCurrencies={setConversionCurrencies}
       />
       <Text>Current currency:</Text>
-      <Text style={styles.currencyText}>{currentCurrencyValue}</Text>
+      <FormattedCurrency type={fromCurrency} value={currentCurrencyValue} />
       <Text>Conversion currenecy:</Text>
-      <Text style={styles.currencyText}>{convertedCurrencyValue}</Text>
+      <FormattedCurrency type={toCurrency} value={convertedCurrencyValue} />
     </SafeAreaView>
   );
 }
