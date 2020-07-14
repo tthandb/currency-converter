@@ -1,1 +1,1 @@
-![Test Image 2](“3DTest.png”)
+![Demo App](assets/demo.png)
