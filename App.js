@@ -106,17 +106,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 15,
+    margin: 10,
   },
-  // button: {
-  //   height: 35,
-  //   width: 200,
-  //   margin: 10,
-  //   borderWidth: 2,
-  //   borderRadius: 20,
-  //   alignItems: 'center',
-  //   borderColor: 'lightblue',
-  //   justifyContent: 'center'
-  // },
   textInput: {
     height: 60,
     padding: 5,
